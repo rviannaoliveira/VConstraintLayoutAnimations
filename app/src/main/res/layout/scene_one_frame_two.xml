@@ -6,7 +6,7 @@
         android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".SceneOne">
 
     <ImageView
             android:id="@+id/backgroundImage"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintRight_toRightOf="@+id/title"
             app:layout_constraintTop_toTopOf="@+id/title"
-            app:layout_constraintBottom_toBottomOf="@+id/title"/>/>
+            app:layout_constraintBottom_toBottomOf="@+id/title"/>
 
     <View
         android:id="@+id/fadeBackgroudView"

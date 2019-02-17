@@ -1,5 +1,6 @@
 package com.rviannaoliveira.vconstraintlayoutanimation
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
 import android.support.v7.app.AppCompatActivity
@@ -9,23 +10,27 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.AnticipateOvershootInterpolator
-import kotlinx.android.synthetic.main.page1.*
+import kotlinx.android.synthetic.main.scene_one_frame_one.*
 
-class MainActivity : AppCompatActivity() {
+class SceneOne : AppCompatActivity() {
     private lateinit var constraintSetDetail: ConstraintSet
     private lateinit var constraintSet: ConstraintSet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.page1)
+        setContentView(R.layout.scene_one_frame_one)
 
         constraintSetDetail = ConstraintSet()
-        constraintSetDetail.clone(this, R.layout.page2)
+        constraintSetDetail.clone(this, R.layout.scene_one_frame_two)
         constraintSet = ConstraintSet()
-        constraintSet.clone(this, R.layout.page1)
+        constraintSet.clone(this, R.layout.scene_one_frame_one)
 
         backgroundImage.setOnClickListener {
             frameOne()
+        }
+
+        next.setOnClickListener {
+            startActivity(Intent(this,SceneTwo::class.java))
         }
     }
 
